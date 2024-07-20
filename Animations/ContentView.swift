@@ -8,17 +8,24 @@
 import SwiftUI
 
 struct ContentView: View {
+    
     var body: some View {
-        VStack {
-            Image(systemName: "globe")
-                .imageScale(.large)
-                .foregroundStyle(.tint)
-            Text("Hello, world!")
+        Form {
+            NavigationLink("Simple", destination: SimpleAnimation())
+            NavigationLink("Implicity", destination: ImplicityAnimations())
+            NavigationLink("Explicity", destination: ExplicityAnimations())
+            NavigationLink("Bindings", destination: AnimationBindings())
+            NavigationLink("Stack (Multiple animations)", destination: AnimationStack())
+            NavigationLink("Gestures", destination: AnimationGestures())
+            NavigationLink("Gestures 2", destination: AnimationGestures2())
+            NavigationLink("Showing and Hiding Transitions", destination: ShowingHidingViews())
         }
-        .padding()
+        .navigationTitle("Animations")
     }
 }
 
 #Preview {
-    ContentView()
+    NavigationStack {
+        ContentView()
+    }
 }
